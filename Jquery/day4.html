@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.0 Transitional//EN”
+
+“http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd”>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<title> following functions: before(), insertBefore(), prependTo(), appendTo(), append(), insertAfter(), after() and remove().</title>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+
+<script type="text/javascript" charset="utf-8" async defer>
+
+	$("document").ready(function(){
+
+		$("#replaceWHtml").bind('click',replaceWHtml);
+		$("#replaceWText").bind('click',replaceWText);
+		$("#addAPara").bind('click',addAPara);
+		$("#removeAPara").bind('click',removeAPara);
+		
+
+		$('#lastIsFirst').bind('click',lastIsFirst);
+		$("#addBefore").bind('click',addBefore);
+		$("#addAfter").bind('click',addAfter);
+		$("#addToTextBox").bind('click',addToTextBox);
+
+
+	});
+
+function lastIsFirst(){
+
+	$("#randPara p:last").append($("#randPara p:first"));
+
+}
+function addBefore(){
+
+	$("#randPara p:first").before("I go before anything");
+}
+function addAfter(){
+	$("#randPara p:last").after("I go after anything");
+}
+function addToTextBox(){
+	$("#randText").val("Random Text");
+}
+
+
+function addAPara(){
+
+	$("#randPara").append('<p> Another paragraph</p>');
+}
+function removeAPara(){
+	$("#randPara p:last").remove();
+}
+function replaceWHtml(){
+	$('#h3Tag').html('<h6> Now I\'am on h6 0</h6>');
+}
+function replaceWText(){
+	$('#h3Tag').html('<h6> Now I\'am on h6 1</h6>');
+}
+
+
+</script>
+
+</head>
+<body>
+
+<div><h3>Playing With Text</h3></div>
+
+ 
+
+<div>
+
+<h3 id="h3Tag">H3 Tag</h3>
+
+</div>
+
+<br />
+
+ 
+
+<div id="randPara">
+
+<p id="firstP">The first paragraph<p>
+
+</div>
+
+ 
+
+<br />
+
+ 
+
+<form action="">
+
+<input type="text" id="randText"></input>
+
+<button type="button" id="replaceWHtml">Replace w/ HTML</button>
+
+<button type="button" id="replaceWText">Replace w/ Text</button>
+
+<button type="button" id="addAPara">Add Text</button>
+
+<button type="button" id="removeAPara">Remove Text</button>
+
+<button type="button" id="lastIsFirst">Last to First</button>
+
+<button type="button" id="addBefore">Add Before</button>
+
+<button type="button" id="addAfter">Add After</button>
+
+<button type="button" id="addToTextBox">Add To Text Box</button>
+
+</form>
+
+</body>
+
+</html>
