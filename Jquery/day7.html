@@ -1,0 +1,135 @@
+!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<head>
+
+<title>JQuery Example</title>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+
+<script type="text/javascript">
+
+$("document").ready(function() {
+
+	$("#oneButton").bind('click',getInfoFromServer);
+	$("#twoButton").bind('click',getDblFromServer);
+	$("#threeButton").bind('click',getXmlFromServer);
+
+});
+
+function getInfoFromServer(){
+
+	$.ajax({
+		type: "GET",
+		url:  "textFromServer.txt",
+		success: postToPage
+	});
+}
+function postToPage(data,status){
+	$('#first').text(data);
+}
+
+function getDblFromServer(){
+	//load() 方法通过 AJAX 请求从服务器加载数据，并把返回的数据放置到指定的元素中。
+	//load(url,data,function(response,status,xhr))
+	/*
+	url	规定要将请求发送到哪个 URL。
+	data	可选。规定连同请求发送到服务器的数据。
+	function(response,status,xhr)	
+	可选。规定当请求完成时运行的函数。
+	额外的参数：
+	response - 包含来自请求的结果数据
+	status - 包含请求的状态（"success", "notmodified", "error", "timeout" 或 "parsererror"）
+	xhr - 包含 XMLHttpRequest 对象
+	*/
+	$("span").load("getDouble.php",$("theform").serializeArray());
+
+
+/*
+	<?php 
+	   $numberToDbl $_POST["data"];
+	   $doubleUp = $numberToDbl *2;
+	   echo $doubleUp;
+	 ?>
+
+*/
+}
+
+function getXmlFromServer(){
+	$.ajax({
+		type: "GET",
+		url: "customers.xml",
+		datatype: "xml",
+		success: postToPageTwo
+	});
+}
+function postToPage(data){
+
+	$(data).find("#customers").each(function(){
+
+		var id = $(this).attr('id');
+		var firstName = $(this).find('firstName');
+		var lastName = $(this).find('lastName');
+		var street = $(this).find('street');
+		var city = $(this).find('city');
+		var zip = $(this).find('zip');
+
+		$('<div class="firstName"></div>').html(firstName).appendTo('#customers');
+		$('<div class="lastName"></div>').html(firstName).appendTo('#customers');
+		$('<div class="street"></div>').html(firstName).appendTo('#customers');
+		$('<div class="city"></div>').html(firstName).appendTo('#customers');
+		$('<div class="zip"></div>').html(firstName).appendTo('#customers');
+
+	});
+}
+
+
+</script>
+
+</head>
+
+<body id="theBody">
+
+<div><h3>Playing with Server Data</h3></div>
+
+<div>
+
+<h4><strong>Message from the Server:</strong></h4>
+
+<p id="first">Waiting for Message</p>
+
+</div>
+
+<form id="theForm">
+
+<button type="button" id="oneButton">Get Text</button><br />
+
+<div>
+
+<h4>Double Number on the Server:</h4>
+
+<span></span><br />
+
+</div>
+
+<input type="text" name="data" id="data"></input>
+
+<button type="button" id="twoButton">Double Number</button><br /><br />
+
+<button type="button" id="threeButton">Get XML Data</button>
+
+</form>
+
+<div>
+
+<h4><strong>XML Data from the Server:</strong></h4>
+
+</div>
+
+<div id="customers">Customer Information</div>
+
+</body>
+
+</html>
+
