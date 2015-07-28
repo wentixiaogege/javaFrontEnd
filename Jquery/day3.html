@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.0 Transitional//EN”
+
+“http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd”>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<title>JQuery Ex 1</title>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+
+<script type="text/javascript" charset="utf-8" async defer>
+
+$("document").ready(function(){
+
+	//bind alert event
+	$("#oneButton").bind('click',alertButtonClick);
+	//bind multiple events
+	$("#textBox1").bind('blur',onBlurEvent)
+				  .bind('focus',onFocusEvent)
+				  .bind('mousedown',onMDownEvent)
+				  .bind('mouseup',onMUpEvent)
+				  .bind('change',onChangeEvent);
+
+
+	$(window).resize(resizeWindow);
+
+	//dealing with logo
+
+	$("#logo").bind('mouseover',mouseOverMe).bind('mouseout',mouseOutMe);
+
+	//
+	$("#twoButton").bind("dblclick",dblClickedMe);
+
+	$("form").submit(function(){
+
+		alert("Submit button clicked!");
+	});
+
+	//unbind 
+	$("#threeButton").bind('click',unbindLogo);
+
+	//bind event to the body
+	//to catch error 
+	//
+	$("#theBody").bind('keyup',checkKeyPressed).bind('mousemove'
+		,theMouseMoved).click(event,eventTriggered);
+
+});
+function eventTriggered(event){
+	$("#tenth").text(event.target.nodeName);
+	$("#eleventh").html(event.timeStamp);
+}
+function checkKeyPressed(event){
+
+	$("#fifth").text(String.fromCharCode(event.keyCode));
+
+}
+function theMouseMoved(event){
+	$("#seventh").html(event.screenX);
+	$("#ninth").html(event.screenY);
+
+}
+function unbindLogo(){
+
+	$("#logo").unbind("mouseover",mouseOverMe),unbind("mouseout",mouseOut);
+}
+function dblClickedMe(){
+	$("#second").html("You dblClickedMe!");
+}
+
+function mouseOverMe(){
+	$("#second").html("You put the cursor on logo");
+}
+function mouseOutMe(){
+	$("#second").html("You stopped touching  logo");
+}
+
+function onBlurEvent(){
+
+	$("#second").html("You left the box00");
+}
+function onFocusEvent(){
+
+	$("#second").html("You entered the box11");
+}
+function onMDownEvent(){
+	$("#second").html("You left the box22");
+}
+function onMUpEvent(){
+	$("#second").html("You entered the box33");
+}
+function onChangeEvent(){
+	$("#second").html("You changed the box44");
+}
+//resize event
+function resizeWindow(){
+	$("#second").html("Window has resized W:"+$(window).width()+
+		"H:"+$(window).height());
+}
+
+function alertButtonClick(){
+
+	alert("There was a button clicked!");
+}	
+
+
+</script>
+
+</head>
+
+ 
+
+<body id="theBody">
+
+<div><h3>JQuery Event Handlers</h3></div>
+
+ 
+
+ 
+
+<div>
+
+<img src='http://www.newthinktank.com/favicon.png' id='logo' alt='Little Brain' />
+
+</div>
+
+<br />
+
+ 
+
+<div>
+
+<p><strong>Events Triggered on the Page:</strong></p>
+
+<p id="second">Waiting for Event</p>
+
+<p id="third">Waiting for Change</p>
+
+</div>
+
+ 
+
+<div>
+
+<p><strong>Key Events Triggered on the Page:</strong></p>
+
+<span id="fourth">Key Pressed:</span>
+
+<span id="fifth">Waiting for Change</span>
+
+</div><br />
+
+ 
+
+<div>
+
+<p><strong>Mouse Movements on the Page:</strong></p>
+
+<span id="sixth">Mouse X Coordinate:</span>
+
+<span id="seventh">Waiting for Change</span><br />
+
+<span id="eighth">Mouse Y Coordinate:</span>
+
+<span id="ninth">Waiting for Change</span><br />
+
+<span>Textbox Changed: </span>
+
+<span id="tenth">Waiting for Event</span><br />
+
+<span>Element Changed When: </span>
+
+<span id="eleventh">Event Occurred When</span>
+
+</div><br />
+
+ 
+
+<form action="">
+
+<button type="button" id="oneButton">Alert on Click</button>
+
+<button type="button" id="twoButton">Click on me Twice</button>
+
+<button type="button" id="threeButton">Unbind the Logo</button>
+
+<input type='text' id="textBox1" size=40>
+
+<input type='submit' value='Send'>
+
+</form>
+
+ 
+
+</body>
+
+</html>

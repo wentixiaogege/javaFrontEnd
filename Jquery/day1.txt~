@@ -1,0 +1,15 @@
+jquery 自身对浏览器的兼容就比较好，不用再考虑兼容问题了，jquery可以兼容到IE6呢，非常好用
+
+.
+AJAX provides you with the ability to: Communicate with your server Pass information back and forth, from the clients browser to the server Update your web page content, without reloading the webpage 
+
+This is the main way people use AJAX:
+
+They write JavaScript code that is triggered to perform some action when a certain event occurs on the website.
+When that event is triggered, JavaScript is used to get data from the server, using an object called XMLHttpRequest. (More on this very soon)
+The new information is inserted into your web page, with out a page reload. This is called Asynchronous Data Retrieval.
+The only negative is that you can only pass XML or Regular Text, between the JavaScript Code and the server.
+In addition you can use JavaScript code to call PHP code to receive information from a Database.
+On the fly CSS changes through JavaScript code, is also referred to as an AJAX technique.
+Now you know the basics. So it’s time to learn, How to AJAX, like a pro!
+

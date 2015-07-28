@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+  <head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+
+    <title>JavaScript Tutorial day 2</title>
+    <style>
+    	#h3style
+    	{
+    		color: gray;
+    	}
+    </style>
+  </head>
+  <body onResize="changeImage();" onload="alert('website loaded')">
+  	<script type="text/javascript" charset="utf-8" async defer>
+  	<!--Hide Js 
+	  
+  	function changeImage()
+  	{
+  		document.getElementById('littleBrain').style.height="35%";
+  		document.getElementById('littleBrain').style.width="35%";
+  		return true;
+  	}
+  	function alertme()
+	{
+		//document.write("fdasfdsa");
+		alertmsg = document.getElementById('littleBrain').src + "\n Height " +
+		document.getElementById('littleBrain').height+ "\n width" +
+		document.getElementById('littleBrain').width;
+		alert( alertmsg);
+		return true;
+	}
+
+
+	function changeColor(){
+
+		document.getElementById("h3style").style.color = "red";
+		document.getElementById("h3style").firstChild.nodeValue = "excited";
+		return true;
+	}
+
+	function changeAgain(){
+
+		document.getElementById("h3style").style.color = "gray";
+		document.getElementById("h3style").firstChild.nodeValue = "bored";
+		return true;
+	}
+
+	function showPara(){
+
+		document.getElementById("first").style.visibility=(document.getElementById("firstp").checked) ? "visible" :"hidden";
+
+		document.getElementById("second").style.visibility=(document.getElementById("secondp").checked )? "visible" :"hidden";
+
+		document.getElementById("third").style.visibility=(document.getElementById("thirdp").checked) ? "visible" :"hidden";
+		return true;
+
+	}
+  	-->
+
+	</script>
+
+	<noscript>
+	<h3> the site requires js </h3>
+	</noscript>
+
+	<img src="littlebrain.jpg" id="littleBrain" onclick="alertme();" ondblclick="alert('you double clicked')">
+
+	<h3 id="h3style" onmouseover="changeColor();" onmouseout="changeAgain();"> jack here </h3>
+
+
+
+	<p id="first"> This is a paragraph </p>
+	<p id="second"> This is a paragraph </p>
+	<p id="third"> This is a paragraph </p>
+
+
+	<form name="formex"accept-charset="utf-8">
+		<input type="checkbox" id="firstp" onclick="showPara();" />
+		<input type="checkbox" id="secondp" onclick="showPara();" />
+		<input type="checkbox" id="thirdp" onclick="showPara();" />
+	</form>
+
+	<form name="formex1"accept-charset="utf-8">
+		<p>Text input</p>
+		<input type="text" id="mousex"/> X Position <br>
+
+		<input type="text" id="mousey"/> Y Position <br>
+
+		<input type="text" id="keypress"/> keypree <br>
+
+		<input type="text" id="mousebutton"/>mousebutton <br>
+		
+	</form>
+	<script type="text/javascript" charset="utf-8" async defer>
+	<!--
+	var mie =(navigator.appName == "Microsoft Internet Explorer")?true:false;
+	if (!mie) {
+
+		// document.captureEvent(Event.MOUSEMOVE);
+
+		document.addEventListener("mousemove",mousePos);
+		document.addEventListener("mousedown",mouseClicked);
+
+		document.addEventListener("keypress",keyPressed);
+
+		// document.captureEvent(Event.MOUSEDOWN);
+
+	}
+
+	// document.onmousemove = mousePos();
+	// document.onmousedown = mouseClicked();
+
+	var mouseClick =0;
+	var keyClicked =0;
+	var mouseX =0;
+	var mouseY =0;
+
+	function mousePos(e){
+		if (!mie) {
+			mouseX = e.pageX;
+			mouseY = e.pageY;
+		}else
+		{
+			mouseX = event.clientX + document.body.scrollLeft;
+
+			mouseY = event.clientY + document.body.scrollTop;
+
+		}
+
+		
+		document.getElementById("mousex").value = mouseX;
+		document.getElementById("mousey").value = mouseY;
+
+
+	}
+	function mouseClicked(e){
+
+		if (mie) {
+			switch(event.button){
+
+				case 0 :
+					document.getElementById("mousebutton").value = "Left";
+					break;
+				case 1 :
+					document.getElementById("mousebutton").value = "middle";
+					break;
+				case 2 :
+					document.getElementById("mousebutton").value = "right";
+					break;
+			}
+			return false;
+		}
+		else{
+			switch(e.which){
+
+				case 1 : 
+					document.getElementById("mousebutton").value = "Left";
+					break;
+				case 2 :
+					document.getElementById("mousebutton").value = "middle";
+					break;
+				case 3 :
+					document.getElementById("mousebutton").value = "right";
+					break;
+			}
+			return false;
+		}
+
+	}
+
+	function keyPressed(e){
+		if (mie) {
+			e = window.event;
+			keyClicked =e.keyCode;
+		}
+		else{
+			keyClicked = String.fromCharCode(e.charCode);
+		}
+
+		if(!keyClicked){
+			return false;
+		}
+
+		document.getElementById("keypress").value = keyClicked;
+	}
+	-->
+	//onabort onerror onkeydown  onkeyup onmouseup onreset onsubmit onunload
+	</script>
+
+
+
+
+  </body>
+</html>

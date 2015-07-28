@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+  <head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+
+    <title>JavaScript Tutorial day 3</title>
+
+
+  	<script language="javascript" type="text/javascript">
+ 			<!-- hide js
+
+ 			function editNodeText(regex,input,helpId,helpMessage)
+ 			{
+ 				console.log(input);
+ 				if(!regex.test(input)){
+ 					if (helpId != null) 
+ 						while(helpId.firstChild)
+ 							helpId.removeChild(helpId.firstChild);
+ 						
+
+ 					helpId.appendChild(document.createTextNode(helpMessage));
+ 					return false;
+ 				
+ 				
+ 				}
+ 				else
+ 				{
+ 					if (helpId != null) {
+ 						while(helpId.firstChild)
+ 							helpId.removeChild(helpId.firstChild);
+ 					
+ 					
+ 					return true;
+ 					}
+ 				}
+
+ 			}
+ 			function isTheFieldEmpty(inputField,helpId){
+
+ 				return editNodeText(/^[A-Za-z\.\' \-]{2,15}\s?/,inputField.value,helpId,"Please enter a valid name.");
+ 				// return editNodeText(/^[A-Za-z\.\' \-]{2,15}\s?[A-Za-z\.\' \-]{2,15}\s?[A-Za-z\.\' \-]{2,15}/, inputField.value, helpId, "Please enter a valid name.");
+ 			}
+ 			function isAddressOk(inputField,helpId){
+ 				return editNodeText(/^[A-Za-z0-9\.\' \-']{5,30}$/,inputField.value,helpId,"Please enter a valid street address  2043 LimeWood Dr");
+ 			}
+ 			function isStateOk(inputField,helpId){
+
+ 				return editNodeText(/^A[LKSZRAERP]IC|C[AOT]|D[EC]|F[LM]|G[AU]|HI|I[ADLN]|K[SY]|LA|M[ADEHINOPST]|N[CDEHJMVY]|O[HKR]|P[ARW]|RI|S[CD]|T[NX]|UT|V[AIT]|W[AIVY]$/i,inputField.value,helpId,"Please enter a valid state  CA ");
+
+ 			}
+ 			function isPhoneOk(inputField,helpId){
+
+ 				return editNodeText(/^([0-9]( |-)?)?(\(?[0-9]{3}\)?|[0-9]{3})( |-)?([0-9]{3}( |-)?[0-9]{4}|[a-zA-Z0-9]{7})$/,inputField.value,helpId,"please enter the valid phone num 669-237-5122");
+ 			}
+
+ 			function isEmailOk(inputField,helpId){
+ 				return editNodeText(/^[A-Za-z0-9._-]+@[A-Za-z0-9._-]+\.[A-Za-z]{2,4}$/,inputField.value,helpId,"{Please enter a valid email address  wentixiaogege@gmail.com");
+
+ 			}
+
+ 			-->
+  	</script>
+  </head>
+
+
+  <body>
+
+ 
+
+  	<div>
+
+  	Enter your name :
+  		<input id="name" name="name" type="text" size="30"
+  			onblur="isTheFieldEmpty(this,document.getElementById('name_help'))"/>
+  			<span id="name_help"></span>
+
+  	</div>
+
+  	<div>
+
+  	Enter your street address :
+  		<input id="street" name="street" type="text" size="30"
+  			onblur="isAddressOk(this,document.getElementById('street_help'))"/>
+  			<span id="street_help"></span>
+
+  	</div>
+
+  	<div>
+
+  	Enter your  city :
+  		<input id="city" name="city" type="text" size="30"
+  			onblur="isTheFieldEmpty(this,document.getElementById('city_help'))"/>
+  			<span id="city_help"></span>
+
+  	</div>
+
+  	<div>
+
+  	Enter your  state code :
+  		<input id="state" name="state" type="text" size="2"
+  			onblur="isStateOk(this,document.getElementById('state_help'))"/>
+  			<span id="state_help"></span>
+
+  	</div>
+
+	<div>
+
+  	Enter your  phone number :
+  		<input id="phone" name="phone" type="text" size="30"
+  			onblur="isPhoneOk(this,document.getElementById('phone_help'))"/>
+  			<span id="phone_help"></span>
+
+  	</div>
+
+	<div>
+
+  	Enter your  email :
+  		<input id="email" name="email" type="text" size="30"
+  			onblur="isEmailOk(this,document.getElementById('emailhelp'))"/>
+  			<span id="email_help"></span>
+
+  	</div>
+
+  	
+
+  </body>
+
+</html>

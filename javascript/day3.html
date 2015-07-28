@@ -1,0 +1,219 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+  <head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+
+    <title>JavaScript Tutorial day 3</title>
+  </head>
+
+
+  <body>
+
+  	<script language="javascript" type="text/javascript">
+
+  	<!-- hide js 
+  	function Animal(){
+
+  		this.name = "no name";
+
+  		this.sound ="Grrr";
+
+  		this.owner = "No owner";
+
+  	}
+
+  	Animal.prototype.setOwner = function(newOwner)
+  	{
+  		if (typeof newOwner != 'undefined')
+  		{
+  			this.owner = newOwner;
+  		}
+  		else
+  		{
+  			document.write("invalid owener");
+  		}
+  	}
+  	Animal.prototype.getOwner = function()
+  	{
+  		
+  		return	this.owner;
+  		
+  	}
+
+  	Animal.prototype.setName = function(newName)
+  	{
+  		if (typeof newName != 'undefined')
+  		{
+  			this.name = newName;
+  		}
+  		else
+  		{
+  			document.write("invalid name");
+  		}
+  	}
+  	Animal.prototype.getName = function()
+  	{
+  		
+  		return	this.name;
+  		
+  	}
+
+  	Animal.prototype.setSound = function(newSound)
+  	{
+  		if (typeof newSound != 'undefined')
+  		{
+  			this.sound = newSound;
+  		}
+  		else
+  		{
+  			document.write("invalid sound");
+  		}
+  	}
+  	Animal.prototype.getSound = function()
+  	{
+  		
+  		return	this.sound;
+  		
+  	}
+
+  	var dog = new Animal();
+
+  	dog.setName("Spot");
+  	dog.setSound("Woof");
+  	dog.setOwner("Paul");
+
+
+  	var name = dog.getName();
+  	document.write(name +"</br>");
+  	document.write(dog.getOwner()+"</br>");
+  	document.write(dog.getSound()+"</br>");
+
+
+  	//inheritance from another object
+
+  	function Cat(){
+  		Animal.call(this);//referrence to the Animcal.prototype.constructor
+  		this.mode = "Happy";
+  	}
+
+  	// super class
+  	Cat.prototype = new Animal();
+
+  	Cat.prototype.constructor = Cat;
+
+  	Cat.prototype.getMode = function(){
+
+  		return this.mode;
+  	}
+
+  	Cat.prototype.setMode = function(newMode){
+  		if (typeof newMode != 'undefined')
+  		{
+  			this.mode = newMode;
+  		}
+  		else
+  		{
+  			document.write("invalid newMode");
+  		}
+  	}
+
+
+  	var sophie =new Cat();
+
+  	sophie.setName("Sophie");
+  	sophie.setOwner("Jack");
+  	sophie.setSound("Meow");
+  	sophie.setMode("Crazy");
+
+	document.write(sophie.getName() +"</br>");
+  	document.write(sophie.getOwner()+"</br>");
+  	document.write(sophie.getSound()+"</br>");
+
+  	document.write(sophie.getMode()+"</br>");
+
+  	document.write(sophie instanceof Cat);
+
+  	document.write(typeof(Cat));
+  	document.write(typeof(sophie));
+
+
+
+  	//method overloading
+
+  	//setStuff(newName);
+  	//setStuff(newName,newSound);
+  	//setStuff(newName,newSound,newOwner);
+
+
+
+  	Cat.prototype.setStuff = function(newName,newSound,newOwner){
+
+  		if ((typeof newMode != 'undefined')&&(typeof newMode != 'undefined')&&(typeof newMode != 'undefined'))
+  		{
+  			Cat.prototype.setStuff = function(newName,newSound,newOwner){
+
+  			}
+  		}
+  		else
+  		{
+  			document.write("invalid newMode");
+  		}
+  	}
+
+  	//polymorthism duotai 
+
+  	// doAnimalStuff
+
+
+
+  	//liaoxuefeng 
+
+  	var Student = {
+	    name: 'Robot',
+	    height: 1.2,
+	    run: function () {
+	        console.log(this.name + ' is running...');
+	    },
+	    fly: function () {
+        	console.log(this.name + ' is flying...');
+   		}
+	    
+	};
+
+	function createStudent(name) {
+	    // 基于Student原型创建一个新对象:
+	    var s = Object.create(Student);
+	    // 初始化新对象:
+	    s.name = name;
+	    return s;
+	}
+
+	var xiaoming = createStudent('xiaoming');
+	xiaoming.run(); // 小明 is running...
+	xiaoming.__proto__ === Student; // true
+
+
+	console.log(xiaoming.fly());
+
+
+	document.write(typeof Student);
+
+	document.write(typeof xiaoming);
+
+
+
+  	-->
+
+
+
+  	</script>
+
+  	<noscript>
+  			<h3>this site requires javascript</h3>
+  	</noscript>
+  	
+  </body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+  <head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+
+    <title>JavaScript Tutorial day 3</title>
+  </head>
+
+
+  <body>
+
+  	<script language="javascript" type="text/javascript">
+
+  	// regular expressions 
+  	// the squence of code 
+  	//basic using of regular expressions
+  	//searches
+  	var longStr = "Jack 123 Main St limewoord 12324 (669)-237-5122 wentixiaogege@gmail.com";
+
+  	//var regPot = /[0-9]{1,5}\s[A-Z]{2}\b[z-a]{2,}/;
+
+  	//var regPat = new RegExp("\d{1,5}\s[A-Z]{2}\b[z-a]{2,}");
+
+  	// document.write(longStr.search(/[A-Za-z]{1-15}\s/)+"</br>");
+
+  	//  .  any one charachter not newline
+  	//  [^0-9]  not a number 
+  	//  \w    A-Z, a-z,0-9,_
+  	//  \W    not above
+  	//  \s    a space 
+  	//  \S    not a space 
+  	//  \d    a number 
+  	//  \D    not a number
+  	//  \b    a word boundry 
+  	//  \B    not a word boundy
+  	//  ?     0-1 number
+  	//  +     1 or more numbers
+    //  *     0 or more numbers
+    //  [Aa]  one A or one a
+    //  ^     the beginning of a string
+    //  $     the end of a string
+
+    //  /g    behind a match  : match every single match through out the whole string
+    //  /i    case insensitive 
+    //  /m   $ represents the end of the line or string whether it contains \n or not
+
+    //for email abbdress
+    // /[A-Za-z0-9._-]+@[A-Za-z0-9._-]+\.[A-Za-z]{2,4}/
+
+    document.write(longStr.search( /[A-Za-z0-9._-]+@[A-Za-z0-9._-]+\.[A-Za-z]{2,4}/)+"</br>");
+
+    document.write(longStr.replace(/\d{5}/,"95132")+ "</br>");
+    document.write(longStr+ "</br>");
+
+    //single match 
+
+    matchArray = longStr.match(/\d{4,5}/g);
+
+    document.write(matchArray + "</br>");
+
+    var regexPat = /\d{3,5}/;
+
+    document.write((regexPat instanceof RegExp) + "</br>");
+
+
+    var regMatch = regexPat.exec(longStr);
+
+    document.write(regMatch + "</br>");
+    document.write(regMatch.index + "</br>");
+
+      document.write(regMatch + "</br>");
+    document.write(regMatch.index + "</br>");
+
+
+  	//search 0 -1 
+
+
+
+  	</script>
+
+  	
+  </body>
+
+</html>

@@ -1,0 +1,74 @@
+jquery 自身对浏览器的兼容就比较好，不用再考虑兼容问题了，jquery可以兼容到IE6呢，非常好用
+
+.
+AJAX provides you with the ability to: Communicate with your server Pass information back and forth, from the clients browser to the server Update your web page content, without reloading the webpage 
+
+This is the main way people use AJAX:
+
+They write JavaScript code that is triggered to perform some action when a certain event occurs on the website.
+When that event is triggered, JavaScript is used to get data from the server, using an object called XMLHttpRequest. (More on this very soon)
+The new information is inserted into your web page, with out a page reload. This is called Asynchronous Data Retrieval.
+The only negative is that you can only pass XML or Regular Text, between the JavaScript Code and the server.
+In addition you can use JavaScript code to call PHP code to receive information from a Database.
+On the fly CSS changes through JavaScript code, is also referred to as an AJAX technique.
+Now you know the basics. So it’s time to learn, How to AJAX, like a pro!
+
+
+/match a tag
+	$("td").css("padding","6px 10px"); // adding padding!
+//match class name
+	$(".hero").css("color","red");
+//match inner class
+	$("ul li.villian").css("background-color","yellow");
+//match id 
+	//$("#numbers").css("background-color","gray");
+
+//multipule tags
+	$("h3,th").css("background-color","orange");
+//$("p + h3") the first h3 tag after p tags
+    $("p + h3").css("background-color","purple");
+//match siblings of something else
+    $("#randstuff ~ h4,h5").css('background-color', 'purple');
+// all child elements  
+    $("#superhumans > *").css("font-style","italic");
+
+
+
+// using very specific ways to identify the elements
+ // using has 
+
+    $("div:has(h4)").css("text-decoration", "underline"); 
+
+   // every div has a id  attribute will 
+    $("div[id]").css("border","5px solid black");
+
+   //
+
+   $("li[class='hero']").css("border","2px solid blue");
+
+   // begins with 
+   $("li[class^='v']").css("border","3px solid purple");
+
+   //ends with
+   $("li[class$='wn']").css("border","3px solid orange");
+
+   // the content inside of it
+   $("li:contains('Richards')").css("background-color","cyan");
+
+   //change the class definations for elements
+
+   $("#numbers tr:odd").addClass("nice");
+
+   $("#numbers tr").mouseover(function(event) {
+
+   	$(this).addClass('mouseon');
+   	/* Act on the event */
+   });
+
+   $("#numbers tr").mouseout(function() {
+   	$(this).removeClass('mouseon');
+   	/* Act on the event */
+   });
+
+});
+

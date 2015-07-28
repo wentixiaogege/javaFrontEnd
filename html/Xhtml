@@ -1,0 +1,21 @@
+Xhtml 
+
+change Version into xhtml extensive hypertext makeup language
+
+
+version  end with />
+
+change <htmk> tags into below
+<html xmlns=”http://www.w3.org/1999/xhtml” xml:lang=”en” lang=”en”>
+
+any defining sylte should link to css files 
+
+
+
+some tags not working in xhtml version 
+
+ center s strike  font frme iframe menu u 
+
+
+inline tags  there is no line break at the end 
+need surround inline tags into block tags? like <p> tags

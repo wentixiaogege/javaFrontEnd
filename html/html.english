@@ -1,0 +1,178 @@
+back slash \    slash / 
+
+double quote " 
+single quote '
+
+comma,
+
+angle bracket <
+
+curly bracket }
+
+1.<version >
+ <! DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> - 
+<html>
+2.  <head>
+          <meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1" >
+          <style type="text/css">
+               h1 {color:red}
+          </style>
+ 
+          <link rel="stylesheet" type="text/css" href="style.css"/>
+          <meta name="description" content=""/>
+          <meta name="keywords" content=""/>
+          <meta name="author" content="Jack"/>
+          <title>jack html tutorials</title>
+
+    </head>
+3.<body>
+           <h1> 12</h1>
+           <h2> 12</h2>
+           <h3> 12</h3>
+           <h4> 12</h4>
+           <h5> 12</h5>
+           <h6> 12</h>
+           <h7> 12</h7>
+ 
+           <!-- abbreviation -->
+
+           <abbr title="As Soon As possible">ASAP</abbr>
+           <acronym title="As soon as possible">ASAP</cronym>
+
+           <b>Bold</b> </br>
+           <big> big</big>
+
+           <blockquote> Indent this text and style</blockquote>
+           <center>Center me please</center>
+
+           <em> I like italic</em>
+           <i>me too </i>
+           <p> foces a new line</p>
+
+           <q> I am a qutoe</q>
+
+           <s> I have been stuck</s>
+
+           <small> I feel small </small>
+
+           <strong> I'm strong </strong>
+
+
+           <sub>subscript</sub>
+
+           <sup>superscript</sup>
+
+
+           <img src="http://www.newthinktank.com/wp-content/uploads/2010/03/marketing-examples45_sm_sm.jpg" alt="Merrill Lynch Ad" height="415" width="300"/> 
+
+           <!-- list -->
+
+           <dl>
+                <dt> Bicycle</dt>
+                <dd> Has 2 weels</dd>
+
+           </dl>
+           <!-- ordered list -->
+           
+           <ol>
+               <li>Car</li>
+               <li>Truck</li>
+           </ol>
+           <!-- unordered list -->
+
+           <ul>
+               <li>Car</li>
+               <li>truck</li>
+           </ul>
+
+           <!-- link open in current self or _blank -->
+
+           <a href="http://newtinktank.com" target="_blank"> Awesome website </a>
+
+           <a href="#Gread Stuff">go to inner page</a>
+
+           <a href="mailto:wentixiaogege@gmail.com?subject=hello%20again">Seng jack an email </a>
+           
+
+
+           <!-- table -->
+
+           <table summary="here is a table">
+                 <caption>
+                    things I did
+                 </caption>
+      
+                 <tr>
+                     <th> Sat </th>
+
+                     <th> Sun </th>
+                 </tr>
+                 <tr>
+                     <th> Bike </th>
+
+                     <th> Run </th>
+                 </tr>
+
+
+
+
+           </table>
+
+
+           <!-- forms -->
+
+           <form action="" method="post">
+           
+                <b>Send message to this Email</b> </br>
+
+                <input type="text" name="email" size=40> </br>
+
+                <textarea rows=10 cols=40 name="message">Defualt text </textarea> </br>
+
+                <input type="password" name="email" size=40> </br>
+
+                <input type="radio" name="email" vale="home"> </br>
+
+                <input type="radio" name="email" vale="home"> </br>
+
+
+                <input type="checkbox" name="email" vale="home1"> </br>
+
+                <input type="checkbox" name="email" vale="home2"> </br>
+
+
+
+                <select name="select">
+                     <option value="loveselect"> love</option>
+
+                     <option value="hateselect"> hate</option>
+                </select>
+
+
+
+
+                  <input type="submit" value="Send" />
+
+
+                  <input type="hidden" name="sub" value="hidden"> </br>
+
+
+
+
+
+
+
+
+
+
+
+           </form>
+
+ <a name="Great Stuff">Great Stuff</a>
+
+  </body>
+
+</html>
+
+
+
